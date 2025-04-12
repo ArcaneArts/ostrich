@@ -1,6 +1,6 @@
 name: ostrich
 description: "Make the bird fly by putting flutter on a server"
-version: 1.0.0
+version: 1.0.0+1
 repository: https://github.com/ArcaneArts/ostrich
 environment:
   sdk: ^3.7.0
