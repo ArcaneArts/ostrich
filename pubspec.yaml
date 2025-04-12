@@ -1,0 +1,16 @@
+name: ostrich
+description: "Make the bird fly by putting flutter on a server"
+version: 1.0.0
+repository: https://github.com/ArcaneArts/ostrich
+environment:
+  sdk: ^3.7.0
+  flutter: ">=1.17.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  fast_log: ">=1.0.0 <2.0.0"
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+flutter:
