@@ -23,7 +23,7 @@ void main() => runFlutterServer((context) async {
 * You can use any flutter packages with native plugins that support linux (or whatever platform your using if not docker linux)
 
 # Setup (Docker)
-```dockerfile
+```Dockerfile
 # Build the Server
 FROM --platform=linux/amd64 dart:stable AS server-builder
 ENV FLUTTER_HOME=/flutter
@@ -119,7 +119,7 @@ If you want to use the [multimedia](https://pub.dev/packages/multimedia) package
    
 4. Define a docker file which builds imagemagick & your server and links it all (uncached builds can take 20+ minutes beware your compiling all image libraries from source)
    
-   ```dockerfile
+   ```Dockerfile
    # Build the Server
    FROM --platform=linux/amd64 dart:stable AS server-builder
    ENV FLUTTER_HOME=/flutter
