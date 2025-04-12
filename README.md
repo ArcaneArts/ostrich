@@ -63,6 +63,16 @@ RUN ldconfig
 WORKDIR /app
 COPY --from=server-builder /app/build/linux/x64/release/bundle ./bundle
 
+# You can also make this docker image act as if it were running in GCP
+# So you can use all the Google Cloud libraries in a dev environment
+# But only add this if your in a dev environment as GCP automatically
+# Adds these to the environment. 
+### DEV ONLY NOT FOR GCP ###################################################
+COPY my-gcp-svc-acct-key.json ./ 
+ENV GOOGLE_APPLICATION_CREDENTIALS=/app/my-gcp-svc-acct-key.json
+ENV GCP_PROJECT=my-gcp-project-id
+############################################################################
+
 # Link libraries to LD path so they are visible on linux
 ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:/usr/lib:
 
@@ -190,6 +200,16 @@ RUN ldconfig
 WORKDIR /app
 COPY --from=server-builder /app/build/linux/x64/release/bundle ./bundle
 COPY --from=server-builder /app/ffi/libimage_magick_ffi.so ./bundle
+
+# You can also make this docker image act as if it were running in GCP
+# So you can use all the Google Cloud libraries in a dev environment
+# But only add this if your in a dev environment as GCP automatically
+# Adds these to the environment. 
+### DEV ONLY NOT FOR GCP ###################################################
+COPY my-gcp-svc-acct-key.json ./ 
+ENV GOOGLE_APPLICATION_CREDENTIALS=/app/my-gcp-svc-acct-key.json
+ENV GCP_PROJECT=my-gcp-project-id
+############################################################################
 
 # Link libraries to LD path so they are visible on linux
 ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:/usr/lib:
